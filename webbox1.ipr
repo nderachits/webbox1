@@ -30,7 +30,7 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{JsTestDriver Assertion Framework}" />
+    <file url="PROJECT" libraries="{JsTestDriver Assertion Framework, Node.js v0.8.21 Core Modules}" />
   </component>
   <component name="Palette2">
     <group name="Swing">
