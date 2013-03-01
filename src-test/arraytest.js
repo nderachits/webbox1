@@ -8,5 +8,6 @@ TestCase("ArrayTest", {
        var arr = [1,2,3,4,5];
        var res = arr.splice(2,3);
        assertEquals([1,2], arr);
+       assertEquals([3,4,5], res);
    }
 });
