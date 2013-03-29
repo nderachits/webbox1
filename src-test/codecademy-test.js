@@ -4,6 +4,11 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testNanAndType" : function() {
+        assertTrue("should be NaN", isNaN( "s"*"s"));
+        assertEquals("should be number type", "number", typeof 123);
+        assertEquals("should be string type", "string", typeof "s");
+    },
     "testMax" : function() {
         assertEquals("Max is 5", 5, findMax(3,5));
         assertEquals("Max is 7", 7, findMax(5, 3, 7));
