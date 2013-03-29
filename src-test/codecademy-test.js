@@ -4,6 +4,16 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testMax" : function() {
+        assertEquals("Max is 5", 5, findMax(3,5));
+        assertEquals("Max is 7", 7, findMax(5, 3, 7));
+    },
+
+    "testGlobalScope" : function() {
+        assertEquals("global variable should be not changed", 5, var1);
+        assertEquals("local var should have separate value", 10, varFunc(10));
+    },
+
     "testBasic" : function() {
         assertEquals("should be equal", 5, "Hello".length);
     },
