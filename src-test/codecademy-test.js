@@ -4,6 +4,31 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testStrings" : function() {
+        var s = "abc";
+        assertEquals("sb 'b'", "b", s[1]);
+        assertEquals("sb 3", 3, s.length);
+    },
+    "testIndexOf" : function() {
+        var text = "s;svnqsvns,dfjasd";
+        assertEquals("sb found", 2, text.indexOf("svn"));
+        assertEquals("sb found", 6, text.indexOf("svn", 5));
+    },
+    "testArrays" : function() {
+        var arr = ["a","b","q","w"];
+        assertEquals("should be awbq", "awbq", arr[0]+arr[3]+arr[1]+arr[2]);
+        assertEquals("sb 4", 4, arr.length);
+        var junk = ["St", 2, "Ln", 7];
+        assertEquals("shdb StLn","StLn", junk[0]+junk[2]);
+        assertEquals("shdb 9",9, junk[1]+junk[3]);
+    },
+    "testFor" : function() {
+        var s = "";
+        for(var i = 0; i<5; i++) {
+            s += i;
+        }
+        assertEquals("String should be 01234", "01234", s);
+    },
     "testNanAndType" : function() {
         assertTrue("should be NaN", isNaN( "s"*"s"));
         assertEquals("should be number type", "number", typeof 123);
