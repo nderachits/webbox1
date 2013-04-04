@@ -4,6 +4,55 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testForProps" : function() {
+        var obj = {
+            name : "Nike",
+            age : 27
+        };
+        var log = "";
+        var i = 0;
+        for( var prop in obj) {
+            log += obj[prop];
+            i++;
+        }
+        assertEquals(2, i);
+        assertTrue(log.indexOf("Nike")>=0);
+        assertTrue(log.indexOf("27")>=0);
+        assertEquals("Nike27".length, log.length);
+    },
+    "testObjects" : function() {
+        var obj = {
+            val3 : [2,3],
+            val4 : function() { return 4}
+        };
+        obj.val1 = 1;
+        obj.val2 = "str";
+        obj["val5"] = "s2";
+
+        var obj2 = new Object();
+        obj2.val1 = "Nike";
+        obj["var6"] = obj2;
+
+        obj.func1 = function() {
+            return "obj" + this.val1 + this.val2 + this.val3[1] + this.var6.val1;
+        };
+        assertEquals("obj1str3Nike",obj.func1());
+        assertEquals(2, obj.val3[0]);
+        assertEquals(4, obj.val4());
+        assertEquals("s2", obj.val5);
+
+    },
+    "testJaggedArrays" : function() {
+        var jagged = [[1,2], [3,4,5], 6,7];
+        assertEquals(1, jagged[0][0]);
+        assertEquals(2, jagged[0][1]);
+        assertEquals(undefined, jagged[0][2]);
+        assertEquals(5, jagged[1][2]);
+        assertEquals(6, jagged[2]);
+        assertEquals(undefined, jagged[4]);
+        assertEquals(4, jagged.length);
+        assertEquals(3, jagged[1].length);
+    },
     "testLoginOps" : function() {
         assertFalse(true && false);
         var f0 = function() {
