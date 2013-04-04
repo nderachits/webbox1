@@ -4,6 +4,45 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testLoginOps" : function() {
+        assertFalse(true && false);
+        var f0 = function() {
+            assertTrue(false);
+            return false;
+        }
+        var f2 = function() {
+            assertTrue(true);
+            return false;
+        }
+        assertFalse(true && false);
+        assertTrue(true || f0());
+        assertEquals(0, true & f2());
+        assertEquals(1, false | !f2());
+        expectAsserts(1 + 2 + 4);
+    },
+    "testSwitch" : function() {
+        switch("val1") {
+            case "val1":
+                assertTrue(true);
+                break;
+            default :
+                assertTrue(false);
+        }
+        expectAsserts(1);
+    },
+    "testWhile" : function(){
+        var i = 2;
+        while(i) {
+            assertTrue(true);
+            i--;
+        }
+        expectAsserts(2);
+    },
+    "testMathFloor" : function() {
+        assertEquals("sb 1",1, Math.floor(1.3));
+        assertEquals("sb 1",1, Math.floor(1.6));
+        assertEquals("sb -2",-2, Math.floor(-1.6));
+    },
     "testStrings" : function() {
         var s = "abc";
         assertEquals("sb 'b'", "b", s[1]);
@@ -30,6 +69,11 @@ TestCase("BasicJavaScriptTest", {
         assertEquals("String should be 01234", "01234", s);
     },
     "testNanAndType" : function() {
+        assertTrue("sb ", isNaN("one"));
+        assertFalse("sb ", isNaN("123"));
+        assertFalse("sb ", isNaN("123.4"));
+        assertFalse("sb ", isNaN(123));
+        assertTrue("sb ", isNaN(undefined));
         assertTrue("should be NaN", isNaN( "s"*"s"));
         assertEquals("should be number type", "number", typeof 123);
         assertEquals("should be string type", "string", typeof "s");
