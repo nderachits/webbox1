@@ -4,6 +4,33 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testContructor" : function() {
+
+        var Person = function(name, age) {
+            this.name = name;
+            this.age = age;
+            this.describe = function() {
+                return "Person "+name+"("+age+")";
+            }
+        };
+
+        function Book(title, author) {
+            this.title = title;
+            this.author = author;
+            this.describe = function() {
+                return "Book "+this.title+" was written by "+this.author.describe();
+            }
+        }
+
+        var horstman = new Person("Horstman", 50);
+        var jc = new Book("Core Java", horstman);
+
+        assertNotNull(horstman);
+        assertEquals("Person Horstman(50)", horstman.describe());
+        assertNotNull(jc);
+        assertEquals("Core Java", jc.title);
+        assertEquals("Book Core Java was written by Person Horstman(50)", jc.describe());
+    },
     "testForProps" : function() {
         var obj = {
             name : "Nike",
@@ -58,11 +85,11 @@ TestCase("BasicJavaScriptTest", {
         var f0 = function() {
             assertTrue(false);
             return false;
-        }
+        };
         var f2 = function() {
             assertTrue(true);
             return false;
-        }
+        };
         assertFalse(true && false);
         assertTrue(true || f0());
         assertEquals(0, true & f2());
@@ -87,10 +114,11 @@ TestCase("BasicJavaScriptTest", {
         }
         expectAsserts(2);
     },
-    "testMathFloor" : function() {
+    "testMath" : function() {
         assertEquals("sb 1",1, Math.floor(1.3));
         assertEquals("sb 1",1, Math.floor(1.6));
         assertEquals("sb -2",-2, Math.floor(-1.6));
+        assertEquals(30, Math.max(25,30));
     },
     "testStrings" : function() {
         var s = "abc";
@@ -109,6 +137,12 @@ TestCase("BasicJavaScriptTest", {
         var junk = ["St", 2, "Ln", 7];
         assertEquals("shdb StLn","StLn", junk[0]+junk[2]);
         assertEquals("shdb 9",9, junk[1]+junk[3]);
+
+        arr[4] = "x";
+        assertEquals("sb 5", 5, arr.length);
+        arr[6] = "z";
+        assertEquals("sb 7", 7, arr.length);
+        assertEquals(undefined, arr[5]);
     },
     "testFor" : function() {
         var s = "";
