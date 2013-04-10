@@ -8,6 +8,7 @@ TestCase("BasicJavaScriptTest", {
         function Car(make, model) {
             this.make = make;
             this.model = model;
+            this.vehicle = "car";
         }
 
         var c3 = new Car("Citroen", "C3");
@@ -18,6 +19,7 @@ TestCase("BasicJavaScriptTest", {
         c3.start();
 
         assertEquals("Citroen C3 started", c3.start());
+        assertEquals("car", c3.vehicle);
 
         function BMW(model) {
             this.make = "BMW";
@@ -31,7 +33,14 @@ TestCase("BasicJavaScriptTest", {
         var m3 = new BMW("M3");
 
         assertEquals("BMW M3 started", m3.start());
+        assertEquals("BMW", m3.make);
+        assertEquals("M3", m3.model);
+        assertEquals("car", m3.vehicle);
+
+        assertEquals(undefined, x5.vehicle);
         assertEquals(undefined , x5.start);
+        assertEquals("BMW" , x5.make);
+        assertEquals("X5" , x5.model);
     },
 
     "testContructor" : function() {
@@ -60,6 +69,18 @@ TestCase("BasicJavaScriptTest", {
         assertNotNull(jc);
         assertEquals("Core Java", jc.title);
         assertEquals("Book Core Java was written by Person Horstman(50)", jc.describe());
+
+        var author1 = new Person("A1");
+        assertNotNull(author1);
+        assertEquals("A1", author1.name);
+        assertEquals(undefined, author1.age);
+
+        var author2 = new Person();
+        assertEquals(undefined, author2.name);
+
+        var a3 = new Person("A3", 99, "Third");
+        assertEquals("A3", a3.name);
+        assertEquals(99, a3.age);
     },
     "testForProps" : function() {
         var obj = {
