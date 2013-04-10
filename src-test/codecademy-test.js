@@ -4,6 +4,36 @@
  */
 
 TestCase("BasicJavaScriptTest", {
+    "testPrototype" : function() {
+        function Car(make, model) {
+            this.make = make;
+            this.model = model;
+        }
+
+        var c3 = new Car("Citroen", "C3");
+
+        Car.prototype.start = function() {
+            return this.make +" "+ this.model + " started";
+        };
+        c3.start();
+
+        assertEquals("Citroen C3 started", c3.start());
+
+        function BMW(model) {
+            this.make = "BMW";
+            this.model = model;
+        }
+
+        var x5 = new BMW("X5");
+
+        BMW.prototype = new Car();
+
+        var m3 = new BMW("M3");
+
+        assertEquals("BMW M3 started", m3.start());
+        assertEquals(undefined , x5.start);
+    },
+
     "testContructor" : function() {
 
         var Person = function(name, age) {
