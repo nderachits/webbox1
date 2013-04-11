@@ -9,6 +9,11 @@ TestCase("BasicJavaScriptTest", {
             this.make = make;
             this.model = model;
             this.vehicle = "car";
+            var cost = 21000;
+
+            this.getCost = function() {
+                return cost;
+            }
         }
 
         var c3 = new Car("Citroen", "C3");
@@ -16,10 +21,23 @@ TestCase("BasicJavaScriptTest", {
         Car.prototype.start = function() {
             return this.make +" "+ this.model + " started";
         };
+
+        Car.prototype.getSalePrice = function() {
+            return cost*0.9; //referencing private var doesn't work
+        }
         c3.start();
 
         assertEquals("Citroen C3 started", c3.start());
         assertEquals("car", c3.vehicle);
+        assertEquals(undefined, c3.cost);
+        assertEquals(21000, c3.getCost());
+
+        try {
+            assertEquals(18900, c3.getSalePrice());
+            assertTrue(false);
+        } catch (e){
+            assertTrue(true);
+        }
 
         function BMW(model) {
             this.make = "BMW";
