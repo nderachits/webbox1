@@ -4,7 +4,22 @@
  */
 
 var saver = new MoneySaver();
-saver.setSalary(300);
-saver.setSavingRate(10);
+saver.salary = 2800;
+saver.savingRate = 30;
+saver.yearlyPromotion = 15;
 
-console.log("expected money: "+saver.expectedInMonths(3));
+var period = 12*4;
+
+var kolyaSaved = saver.expectedInMonths(period);
+console.log("expected money Kolya: "+kolyaSaved);
+
+var saverAnn = new MoneySaver();
+saverAnn.salary = 950;
+saverAnn.savingRate = 45;
+saverAnn.yearlyPromotion = 15;
+
+var annSaved = saverAnn.expectedInMonths(period);
+console.log("expected money Ann: "+annSaved);
+
+
+console.log("kolya+ann savings: "+(kolyaSaved+annSaved));

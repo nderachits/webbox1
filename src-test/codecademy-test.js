@@ -4,7 +4,7 @@
  */
 
 TestCase("BasicJavaScriptTest", {
-    "testPrototype" : function() {
+    testPrototype : function() {
         function Car(make, model) {
             this.make = make;
             this.model = model;
@@ -103,7 +103,7 @@ TestCase("BasicJavaScriptTest", {
     "testForProps" : function() {
         var obj = {
             name : "Nike",
-            age : 27
+            "age" : 27
         };
         var log = "";
         var i = 0;
@@ -116,9 +116,9 @@ TestCase("BasicJavaScriptTest", {
         assertTrue(log.indexOf("27")>=0);
         assertEquals("Nike27".length, log.length);
     },
-    "testObjects" : function() {
+    testObjects : function() {
         var obj = {
-            val3 : [2,3],
+            "val3" : [2,3],
             val4 : function() { return 4}
         };
         obj.val1 = 1;
@@ -193,6 +193,10 @@ TestCase("BasicJavaScriptTest", {
         var s = "abc";
         assertEquals("sb 'b'", "b", s[1]);
         assertEquals("sb 3", 3, s.length);
+        assertEquals("3s", 3+"s");
+        assertEquals("5s", 2+3+"s");
+        assertEquals("23s", ""+2+3+"s");
+
     },
     "testIndexOf" : function() {
         var text = "s;svnqsvns,dfjasd";
