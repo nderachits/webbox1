@@ -4,13 +4,6 @@
  */
 
 TestCase("BasicJavaScriptTest", {
-    "testHasOwnProperty" : function() {
-        var obj = {
-            age: 27
-        };
-        assertEquals(true, obj.hasOwnProperty("age"));
-        assertEquals(false, obj.hasOwnProperty("blabla"));
-    },
     "testContructor" : function() {
 
         var Person = function(name, age) {
@@ -165,12 +158,8 @@ TestCase("BasicJavaScriptTest", {
         assertFalse("sb ", isNaN(123));
         assertTrue("sb ", isNaN(undefined));
         assertTrue("should be NaN", isNaN( "s"*"s"));
-        assertEquals("number", typeof 123);
-        assertEquals("string", typeof "str");
-        assertEquals("string", typeof 'c');
-        assertEquals("string", typeof 'ch');
-        assertEquals("object", typeof new Object());
-        assertEquals("object", typeof {});
+        assertEquals("should be number type", "number", typeof 123);
+        assertEquals("should be string type", "string", typeof "s");
     },
     "testMax" : function() {
         assertEquals("Max is 5", 5, findMax(3,5));
