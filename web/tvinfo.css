@@ -1,0 +1,17 @@
+
+* {
+    /*border: 1px dashed blue;*/
+}
+
+.holder {
+    background-color: lightgray;
+    max-height: 56vw;
+}
+
+p {
+    font-size: 4vw;
+}
+
+img {
+    max-width: 100%;
+}
