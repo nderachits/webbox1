@@ -15,12 +15,12 @@ body
 	/* Remove the background color to make it transparent */
 	background-color: #fff;
 
-	margin: 20px;
+	margin: 0px;
 }
 
 .cke_editable
 {
-	font-size: 13px;
+	font-size: 4vw;
 	line-height: 1.6;
 }
 
@@ -79,6 +79,7 @@ img.right
 	float: right;
 	margin-left: 15px;
 	padding: 5px;
+	width: 60vw;
 }
 
 img.left
