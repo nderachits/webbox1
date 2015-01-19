@@ -17,6 +17,7 @@ TestCase("BasicJavaScriptTest", {
         function Book(title, author) {
             this.title = title;
             this.author = author;
+            var notseen = "something";
             this.describe = function() {
                 return "Book "+this.title+" was written by "+this.author.describe();
             }
@@ -30,6 +31,9 @@ TestCase("BasicJavaScriptTest", {
         assertNotNull(jc);
         assertEquals("Core Java", jc.title);
         assertEquals("Book Core Java was written by Person Horstman(50)", jc.describe());
+        assertEquals(undefined, jc.notseen);
+        assertTrue(jc.title != null);
+        assertTrue(jc.notseen == null);
     },
     "testForProps" : function() {
         var obj = {
@@ -80,7 +84,7 @@ TestCase("BasicJavaScriptTest", {
         assertEquals(4, jagged.length);
         assertEquals(3, jagged[1].length);
     },
-    "testLoginOps" : function() {
+    "testLogicOps" : function() {
         assertFalse(true && false);
         var f0 = function() {
             assertTrue(false);
