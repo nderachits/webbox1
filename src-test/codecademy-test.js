@@ -53,7 +53,7 @@ TestCase("BasicJavaScriptTest", {
     },
     "testObjects" : function() {
         var obj = {
-            val3 : [2,3],
+            "val3" : [2,3],
             val4 : function() { return 4}
         };
         obj.val1 = 1;
