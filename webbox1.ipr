@@ -19,6 +19,7 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="CopyrightManager" default="" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -118,4 +119,3 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
-
