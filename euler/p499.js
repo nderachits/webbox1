@@ -21,7 +21,7 @@ function findProb(cost, initial) {
 }
 
 function winWithRnd(cost, initial) {
-    var iterate = 20000;
+    var iterate = 2000;
     var money = initial;
     var pot;
     for(var i = 0; i < iterate; i++) {

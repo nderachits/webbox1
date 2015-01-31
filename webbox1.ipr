@@ -102,7 +102,7 @@
     </option>
   </component>
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{JsTestDriver Assertion Framework}" />
+    <file url="PROJECT" libraries="{JsTestDriver Assertion Framework, Node.js v0.10.35 Core Modules}" />
     <excludedPredefinedLibrary name="HTML" />
     <excludedPredefinedLibrary name="HTML5 / EcmaScript 5" />
   </component>
