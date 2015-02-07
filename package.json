@@ -1,0 +1,28 @@
+{
+  "name": "webbox1",
+  "version": "1.0.0",
+  "description": "Playground for html,css,js,node,mocha,chai,karma",
+  "main": "karma.conf.js",
+  "dependencies": {
+    "chai": "^1.10.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nderachits/webbox1.git"
+  },
+  "author": "Mikalai Dzerachyts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nderachits/webbox1/issues"
+  },
+  "homepage": "https://github.com/nderachits/webbox1"
+}
