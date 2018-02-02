@@ -6,11 +6,11 @@
 TestCase("BasicJavaScriptTest", {
     "testContructor" : function() {
 
-        var Person = function(name, age) {
-            this.name = name;
-            this.age = age;
+        var Person = function(nameParam, age1) {
+            this.name = nameParam;
+            this.age = age1;
             this.describe = function() {
-                return "Person "+name+"("+age+")";
+                return "Person "+nameParam+"("+this.age+")";
             }
         };
 
@@ -27,6 +27,7 @@ TestCase("BasicJavaScriptTest", {
         var jc = new Book("Core Java", horstman);
 
         assertNotNull(horstman);
+        console.log(horstman.describe());
         assertEquals("Person Horstman(50)", horstman.describe());
         assertNotNull(jc);
         assertEquals("Core Java", jc.title);
@@ -34,6 +35,10 @@ TestCase("BasicJavaScriptTest", {
         assertEquals(undefined, jc.notseen);
         assertTrue(jc.title != null);
         assertTrue(jc.notseen == null);
+
+        horstman.name = "nn";
+        horstman.age = 55;
+        assertEquals("Person Horstman(55)", horstman.describe());
     },
     "testForProps" : function() {
         var obj = {
@@ -94,11 +99,13 @@ TestCase("BasicJavaScriptTest", {
             assertTrue(true);
             return false;
         };
-        assertFalse(true && false);
         assertTrue(true || f0());
         assertEquals(0, true & f2());
         assertEquals(1, false | !f2());
-        expectAsserts(1 + 2 + 4);
+        assertEquals(1, true | f2());
+        assertEquals(true, true || f2());
+        assertEquals(3, 1 | 2);
+        expectAsserts(1 + 1 + 2 + 2 + 4);
     },
     "testSwitch" : function() {
         switch("val1") {
