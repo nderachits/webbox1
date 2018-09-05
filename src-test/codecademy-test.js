@@ -43,7 +43,8 @@ TestCase("BasicJavaScriptTest", {
     "testForProps" : function() {
         var obj = {
             name : "Nike",
-            age : 27
+            age : 27,
+            "1" : 30
         };
         var log = "";
         var logNames = "";
@@ -53,13 +54,15 @@ TestCase("BasicJavaScriptTest", {
             logNames += prop;
             i++;
         }
-        assertEquals(2, i);
+        assertEquals(3, i);
         assertTrue(log.indexOf("Nike")>=0);
         assertTrue(log.indexOf("27")>=0);
-        assertEquals("Nike27".length, log.length);
+        assertTrue(log.indexOf("30")>=0);
+        assertEquals("Nike2730".length, log.length);
         assertTrue(logNames.indexOf("name")>=0);
         assertTrue(logNames.indexOf("age")>=0);
-        assertEquals("nameage".length, logNames.length);
+        assertTrue(logNames.indexOf("1")>=0);
+        assertEquals("nameage1".length, logNames.length);
     },
     "testObjects" : function() {
         var obj = {
