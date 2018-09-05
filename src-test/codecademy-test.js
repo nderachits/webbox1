@@ -186,6 +186,9 @@ TestCase("BasicJavaScriptTest", {
         assertEquals("should be equal", 5, "Hello".length);
     },
     "testComparisons" : function() {
+        var nullVar = null;
+        assertTrue(nullVar === null);
+        assertFalse(nullVar !== null);
         assertTrue("Should be Equal", 1+2 === 3);
         assertFalse("Should Not equal", 1+2 !== 3);
         assertEquals("Modulo shoud be 2", 2, 5 % 3);
