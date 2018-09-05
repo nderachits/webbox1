@@ -46,15 +46,20 @@ TestCase("BasicJavaScriptTest", {
             age : 27
         };
         var log = "";
+        var logNames = "";
         var i = 0;
         for( var prop in obj) {
             log += obj[prop];
+            logNames += prop;
             i++;
         }
         assertEquals(2, i);
         assertTrue(log.indexOf("Nike")>=0);
         assertTrue(log.indexOf("27")>=0);
         assertEquals("Nike27".length, log.length);
+        assertTrue(logNames.indexOf("name")>=0);
+        assertTrue(logNames.indexOf("age")>=0);
+        assertEquals("nameage".length, logNames.length);
     },
     "testObjects" : function() {
         var obj = {
