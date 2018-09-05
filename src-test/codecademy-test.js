@@ -154,6 +154,12 @@ TestCase("BasicJavaScriptTest", {
         arr[6] = "z";
         assertEquals("sb 7", 7, arr.length);
         assertEquals(undefined, arr[5]);
+
+        var stack = [];
+        stack.push(10);
+        assertEquals("sb 1", 1, stack.length);
+        stack.push(20);
+        assertEquals("sb 2", 2, stack.length);
     },
     "testFor" : function() {
         var s = "";
