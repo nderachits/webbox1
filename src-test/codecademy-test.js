@@ -201,6 +201,13 @@ TestCase("BasicJavaScriptTest", {
     },
     "testComparisons" : function() {
         var nullVar = null;
+        var undefVar = undefined;
+        if(undefVar) {
+            assertTrue(false);
+        } else {
+            assertTrue(true);
+        }
+
         assertTrue(nullVar === null);
         assertFalse(nullVar !== null);
         assertTrue("Should be Equal", 1+2 === 3);
